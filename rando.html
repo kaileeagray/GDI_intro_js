@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>untitled doc</title>
+    <script>
+      window.onload = init; //init suggests initialize
+      function init() {
+        var myImage;
+        var images = ["header1.jpg", "header2.jpg", "header3.jpg", "header4.jpg", "header5.jpg", "header6.jpg"];
+        var arrayIndex = Math.floor(Math.random() * images.length);
+        myImage = document.getElementById("mainImage");
+        myImage.src = "img/" + images[arrayIndex];
+
+        var buttonNext = document.getElementById("buttonNext");
+
+        buttonNext.addEventListener("click", moveForward);
+
+        function moveForward (){
+          arrayIndex++;
+          if (arrayIndex > images.length-1){
+            arrayIndex = 0;}
+          myImage.src = "img/" + images[arrayIndex];
+        } }
+    </script>
+  </head>
+  <body>
+
+    <img id="mainImage"/>
+    <button id="buttonNext"> Next Slide </button>
+
+  </body>
+</html>
